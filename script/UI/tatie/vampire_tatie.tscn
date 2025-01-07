@@ -1,0 +1,126 @@
+[gd_scene load_steps=14 format=3 uid="uid://dsjb6470k7dit"]
+
+[ext_resource type="Shader" path="res://shader/transition2_2.gdshader" id="1_tqjxf"]
+[ext_resource type="Script" path="res://script/UI/tatie/vampire_tatie.gd" id="1_u5m8g"]
+[ext_resource type="Texture2D" uid="uid://dbv7b7tbr1eqm" path="res://object/vampire_tatie/vampire_tatie20240902_3.png" id="2_ia4qc"]
+[ext_resource type="Texture2D" uid="uid://qfv3wdny6ji6" path="res://object/vampire_tatie/vampire_tatie20240902_5.png" id="3_eup0y"]
+[ext_resource type="Texture2D" uid="uid://cgux5jum0yeqt" path="res://object/vampire_tatie/vampire_tatie20240902_2.png" id="4_0opko"]
+[ext_resource type="Texture2D" uid="uid://dy066kb7iosq8" path="res://object/vampire_tatie/vampire_tatie20240902_4.png" id="5_5iju1"]
+[ext_resource type="Texture2D" uid="uid://c8l67yqyepsdq" path="res://object/vampire_tatie/vampire_tatie20240902.png" id="6_vk3u6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sobkm"]
+shader = ExtResource("1_tqjxf")
+shader_parameter/intensity = 1.0
+shader_parameter/scroll_speed = null
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3uft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ia4qc")
+}],
+"loop": true,
+"name": &"vampire_ang1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_eup0y")
+}],
+"loop": true,
+"name": &"vampire_ang2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0opko")
+}],
+"loop": true,
+"name": &"vampire_com",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_5iju1")
+}],
+"loop": true,
+"name": &"vampire_def",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_vk3u6")
+}],
+"loop": true,
+"name": &"vampire_smile",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_ceji7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_cl156"]
+resource_name = "trans_vam_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0nexv"]
+resource_name = "trans_vam_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cdf5w"]
+_data = {
+"RESET": SubResource("Animation_ceji7"),
+"trans_vam_in": SubResource("Animation_cl156"),
+"trans_vam_out": SubResource("Animation_0nexv")
+}
+
+[node name="vampire_tatie" type="Node2D" groups=["vampire_tatie"]]
+script = ExtResource("1_u5m8g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_sobkm")
+position = Vector2(292, 144)
+scale = Vector2(0.4825, 0.4825)
+sprite_frames = SubResource("SpriteFrames_q3uft")
+animation = &"vampire_com"
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_cdf5w")
+}

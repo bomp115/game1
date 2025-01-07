@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn87r5py6rv0b"]
+
+[ext_resource type="Script" path="res://script/item/score_item/score_item.gd" id="1_0aoko"]
+[ext_resource type="Texture2D" uid="uid://bcxsx8dp3tru0" path="res://object/score_item/score_item4/score_item4_1.png" id="2_beoa7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfir2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rq7qt"]
+size = Vector2(128, 133)
+
+[node name="cake" type="Area2D"]
+script = ExtResource("1_0aoko")
+
+[node name="ScoreItem41" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+texture = ExtResource("2_beoa7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xfir2")
+
+[node name="item_close" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item_close"]
+shape = SubResource("RectangleShape2D_rq7qt")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_entered" from="item_close" to="." method="_on_item_close_area_entered"]

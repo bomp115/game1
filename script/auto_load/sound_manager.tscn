@@ -1,0 +1,133 @@
+[gd_scene load_steps=26 format=3 uid="uid://ddhlbukrnd5de"]
+
+[ext_resource type="AudioStream" uid="uid://d1c8yxl4st678" path="res://sound/bgm/santa_stage1.wav" id="1_7kuut"]
+[ext_resource type="Script" path="res://script/auto_load/sound_manager.gd" id="1_tw675"]
+[ext_resource type="AudioStream" uid="uid://bsggxocq2o0ko" path="res://sound/bgm/santa_prologue.ogg" id="3_leala"]
+[ext_resource type="AudioStream" uid="uid://b27gre24tvg7q" path="res://sound/bgm/santa_boss1_2.ogg" id="4_myk61"]
+[ext_resource type="AudioStream" uid="uid://dgoocwujlp7fd" path="res://sound/se/ogg/barrier1.ogg" id="5_7upcq"]
+[ext_resource type="AudioStream" uid="uid://cnf7wh64ki3f4" path="res://sound/se/ogg/barrier2.ogg" id="6_27i8n"]
+[ext_resource type="AudioStream" uid="uid://cdnnbmcjn675s" path="res://sound/se/ogg/beat1.ogg" id="7_0ogk4"]
+[ext_resource type="AudioStream" uid="uid://c40a1napqbsnm" path="res://sound/se/ogg/beated1.ogg" id="8_2726n"]
+[ext_resource type="AudioStream" uid="uid://1px846d0kkuu" path="res://sound/se/ogg/clear_dis.ogg" id="9_52srl"]
+[ext_resource type="AudioStream" uid="uid://cwohcekp7tknt" path="res://sound/se/ogg/continue_num_dis.ogg" id="10_u3ex3"]
+[ext_resource type="AudioStream" uid="uid://cl6i7tf42lk5h" path="res://sound/se/ogg/power1.ogg" id="11_mdh5o"]
+[ext_resource type="AudioStream" uid="uid://ekou84g6no64" path="res://sound/se/ogg/score_dis.ogg" id="12_dgjc0"]
+[ext_resource type="AudioStream" uid="uid://d2qa5g215n1jc" path="res://sound/se/ogg/shot1.ogg" id="13_i82vw"]
+[ext_resource type="AudioStream" uid="uid://b2mium8boq12a" path="res://sound/se/ogg/up1.ogg" id="14_bi5oo"]
+[ext_resource type="AudioStream" uid="uid://vl446gx275wa" path="res://sound/se/ogg/up2.ogg" id="15_u1cla"]
+[ext_resource type="AudioStream" uid="uid://d33qjenbetfdk" path="res://sound/se/ogg/decide1.ogg" id="16_jww6j"]
+[ext_resource type="AudioStream" uid="uid://ppi6a5n2i1dt" path="res://sound/se/ogg/falling1.ogg" id="17_36xtl"]
+[ext_resource type="AudioStream" uid="uid://jgkptrhi23jj" path="res://sound/se/ogg/reflect1.ogg" id="18_d0dth"]
+[ext_resource type="AudioStream" uid="uid://cafmj5x6uclrt" path="res://sound/se/ogg/select1.ogg" id="19_70jiv"]
+[ext_resource type="AudioStream" uid="uid://c0c8yy7fweeqb" path="res://sound/se/ogg/reject1.ogg" id="20_bh80o"]
+[ext_resource type="AudioStream" uid="uid://1hgtcuf4g3yq" path="res://sound/se/ogg/barrier_off.ogg" id="21_tty6s"]
+[ext_resource type="AudioStream" uid="uid://cueo6b3ituwfv" path="res://sound/se/ogg/approach1.ogg" id="22_3yqpi"]
+[ext_resource type="AudioStream" uid="uid://c8b6mknaauace" path="res://sound/se/ogg/rogo_touzyou.ogg" id="23_d8uk5"]
+[ext_resource type="AudioStream" uid="uid://b1tgfufu3lpli" path="res://sound/se/ogg/rogo_maru_rakka2.ogg" id="24_jnaqs"]
+[ext_resource type="AudioStream" uid="uid://bw1s0mb3vcanf" path="res://sound/se/ogg/piko-nn.ogg" id="25_ptanq"]
+
+[node name="sound_manager" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_tw675")
+
+[node name="bgm" type="Node2D" parent="."]
+
+[node name="stage1" type="AudioStreamPlayer2D" parent="bgm"]
+stream = ExtResource("1_7kuut")
+bus = &"bgm"
+
+[node name="prologue" type="AudioStreamPlayer2D" parent="bgm"]
+stream = ExtResource("3_leala")
+bus = &"bgm"
+
+[node name="boss1" type="AudioStreamPlayer2D" parent="bgm"]
+stream = ExtResource("4_myk61")
+bus = &"bgm"
+
+[node name="se" type="Node2D" parent="."]
+
+[node name="barrier1" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("5_7upcq")
+bus = &"se"
+
+[node name="barrier2" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("6_27i8n")
+bus = &"se"
+
+[node name="beat1" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("7_0ogk4")
+bus = &"se"
+
+[node name="beated1" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("8_2726n")
+bus = &"se"
+
+[node name="clear_dis" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("9_52srl")
+bus = &"se"
+
+[node name="continue_num_dis" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("10_u3ex3")
+bus = &"se"
+
+[node name="power1" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("11_mdh5o")
+volume_db = 4.952
+bus = &"se"
+
+[node name="score_dis" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("12_dgjc0")
+bus = &"se"
+
+[node name="shot1" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("13_i82vw")
+bus = &"se"
+
+[node name="up1" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("14_bi5oo")
+bus = &"se"
+
+[node name="up2" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("15_u1cla")
+volume_db = 8.914
+bus = &"se"
+
+[node name="decide1" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("16_jww6j")
+bus = &"se"
+
+[node name="falling_att" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("17_36xtl")
+bus = &"se"
+
+[node name="reflect1" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("18_d0dth")
+bus = &"se"
+
+[node name="select1" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("19_70jiv")
+bus = &"se"
+
+[node name="reject" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("20_bh80o")
+bus = &"se"
+
+[node name="barrier_off" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("21_tty6s")
+bus = &"se"
+
+[node name="approach" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("22_3yqpi")
+bus = &"se"
+
+[node name="rogo_app" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("23_d8uk5")
+bus = &"se"
+
+[node name="rogo_imagefall" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("24_jnaqs")
+bus = &"se"
+
+[node name="rogo_pikon" type="AudioStreamPlayer2D" parent="se"]
+stream = ExtResource("25_ptanq")
+bus = &"se"

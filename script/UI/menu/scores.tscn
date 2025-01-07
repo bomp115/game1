@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://buci8rkbjmqkj"]
+
+[ext_resource type="FontFile" uid="uid://xg47m55sxhbx" path="res://object/font/pc_9800_bold.ttf" id="1_irj21"]
+[ext_resource type="Script" path="res://script/UI/menu/scores.gd" id="2_7tfs1"]
+
+[sub_resource type="Theme" id="Theme_cklpm"]
+default_font = ExtResource("1_irj21")
+default_font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_n033d"]
+font_size = 30
+font_color = Color(0.756863, 0.8, 0.509804, 1)
+outline_size = 2
+outline_color = Color(0, 0.0745098, 0.00784314, 1)
+shadow_color = Color(0, 0, 0, 0.556863)
+shadow_offset = Vector2(4.19, 4.005)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lhp1k"]
+font_size = 30
+font_color = Color(0.756863, 0.8, 0.509804, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.498039)
+shadow_offset = Vector2(4.37, 4.02)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n5xjq"]
+font_size = 25
+font_color = Color(0.756863, 0.8, 0.509804, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.494118)
+shadow_offset = Vector2(4.32, 4.285)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x1c6k"]
+font_size = 25
+font_color = Color(0.756863, 0.8, 0.509804, 1)
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.505882)
+shadow_offset = Vector2(4.285, 4.2)
+
+[node name="scores" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 9.0
+offset_right = -3.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_cklpm")
+script = ExtResource("2_7tfs1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 60.0
+offset_right = 71.0
+offset_bottom = 207.0
+
+[node name="score" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_n033d")
+
+[node name="approach" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+label_settings = SubResource("LabelSettings_lhp1k")
+
+[node name="continue" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_n5xjq")
+
+[node name="bomb_num" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_x1c6k")

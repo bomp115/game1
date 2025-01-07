@@ -1,0 +1,265 @@
+[gd_scene load_steps=26 format=3 uid="uid://76v6jmbltf0v"]
+
+[ext_resource type="Script" path="res://script/stage/stage1/main_ui.gd" id="1_0jntk"]
+[ext_resource type="Texture2D" uid="uid://ma2go6fia0ki" path="res://object/background/santa_ui20240817_3.png" id="2_as022"]
+[ext_resource type="Shader" path="res://shader/scroll_background.gdshader" id="3_r3yn8"]
+[ext_resource type="Texture2D" uid="uid://d2xh0xmh0voo4" path="res://object/background/stage_mati4.png" id="4_jjvea"]
+[ext_resource type="PackedScene" uid="uid://dr1yl8f1n21jp" path="res://script/player/player/player.tscn" id="5_ciry3"]
+[ext_resource type="PackedScene" uid="uid://buci8rkbjmqkj" path="res://script/UI/menu/scores.tscn" id="6_7lsfo"]
+[ext_resource type="Shader" path="res://shader/transition3.gdshader" id="7_82qy6"]
+[ext_resource type="Texture2D" uid="uid://dmepro67rx10g" path="res://object/life/santa_heart20240912.png" id="7_xy3b6"]
+[ext_resource type="Texture2D" uid="uid://doayoiijhxpee" path="res://object/frame/frame3.png" id="8_dall7"]
+[ext_resource type="FontFile" uid="uid://xg47m55sxhbx" path="res://object/font/pc_9800_bold.ttf" id="8_jjt4h"]
+[ext_resource type="Texture2D" uid="uid://cdes3xoqu5ys8" path="res://object/title/santa_title_logo3.png" id="11_cwxiy"]
+[ext_resource type="Texture2D" uid="uid://crc0l6a5rgci3" path="res://object/scroll_bar/HP_bar.png" id="12_pi5wu"]
+[ext_resource type="PackedScene" uid="uid://1e1hssj5cmiu" path="res://script/UI/menu/result.tscn" id="13_xbxim"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f5ks6"]
+shader = ExtResource("3_r3yn8")
+shader_parameter/scroll_speed = 0.3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hspb"]
+size = Vector2(235.5, 66.75)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vim0j"]
+shader = ExtResource("7_82qy6")
+shader_parameter/direction = Vector2(0, 0.5)
+shader_parameter/offset = 0.449
+shader_parameter/fade = 1.0
+shader_parameter/strip = 1.47
+
+[sub_resource type="LabelSettings" id="LabelSettings_qtgbx"]
+font = ExtResource("8_jjt4h")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oh3ew"]
+shader = ExtResource("7_82qy6")
+shader_parameter/direction = Vector2(0, 0.5)
+shader_parameter/offset = 1.0
+shader_parameter/fade = 1.0
+shader_parameter/strip = 2.42
+
+[sub_resource type="LabelSettings" id="LabelSettings_08xb2"]
+font = ExtResource("8_jjt4h")
+font_size = 30
+font_color = Color(0, 0.0392157, 0, 0.964706)
+
+[sub_resource type="Animation" id="Animation_nsqvc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../start1:material:shader_parameter/offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.449]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../start2:material:shader_parameter/offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_7k03v"]
+resource_name = "start1_fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../start1:material:shader_parameter/offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_y226r"]
+resource_name = "start1_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../start1:material:shader_parameter/offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_kgh5e"]
+resource_name = "start2_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../start2:material:shader_parameter/offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_qmqee"]
+resource_name = "start2_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../start2:material:shader_parameter/offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cxagw"]
+_data = {
+"RESET": SubResource("Animation_nsqvc"),
+"start1_fade": SubResource("Animation_7k03v"),
+"start1_out": SubResource("Animation_y226r"),
+"start2_in": SubResource("Animation_kgh5e"),
+"start2_out": SubResource("Animation_qmqee")
+}
+
+[node name="main_ui" type="Node2D" groups=["main"]]
+process_mode = 1
+script = ExtResource("1_0jntk")
+
+[node name="SantaUi202408173" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(320, 200)
+texture = ExtResource("2_as022")
+
+[node name="StageMati4" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_f5ks6")
+position = Vector2(209, 202)
+scale = Vector2(0.7, 0.370833)
+texture = ExtResource("4_jjvea")
+
+[node name="player" parent="." instance=ExtResource("5_ciry3")]
+position = Vector2(221, 212)
+
+[node name="bullet_col" type="Area2D" parent="." groups=["bullet_col"]]
+position = Vector2(1, -16)
+priority = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet_col"]
+position = Vector2(210, 79)
+shape = SubResource("RectangleShape2D_7hspb")
+
+[node name="scores" parent="." instance=ExtResource("6_7lsfo")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 481.0
+offset_top = 17.0
+offset_right = 587.0
+offset_bottom = 62.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="start1" type="Label" parent="."]
+material = SubResource("ShaderMaterial_vim0j")
+offset_left = 176.0
+offset_top = 184.0
+offset_right = 251.0
+offset_bottom = 215.0
+text = "Ready?"
+label_settings = SubResource("LabelSettings_qtgbx")
+
+[node name="start2" type="Label" parent="."]
+material = SubResource("ShaderMaterial_oh3ew")
+offset_left = 176.0
+offset_top = 184.0
+offset_right = 244.0
+offset_bottom = 215.0
+text = " GO!"
+label_settings = SubResource("LabelSettings_08xb2")
+
+[node name="phase" type="Timer" parent="."]
+wait_time = 3.355
+one_shot = true
+autostart = true
+
+[node name="start" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Frame3")
+libraries = {
+"": SubResource("AnimationLibrary_cxagw")
+}
+
+[node name="Frame3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(321, 202)
+scale = Vector2(1, 1.21)
+texture = ExtResource("8_dall7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 458.0
+offset_top = 328.0
+offset_right = 606.0
+offset_bottom = 375.0
+
+[node name="SantaHeart20240912" type="Sprite2D" parent="HBoxContainer"]
+texture_filter = 1
+position = Vector2(34, 24)
+texture = ExtResource("7_xy3b6")
+
+[node name="SantaHeart20240913" type="Sprite2D" parent="HBoxContainer"]
+texture_filter = 1
+position = Vector2(79, 24)
+texture = ExtResource("7_xy3b6")
+
+[node name="SantaHeart20240914" type="Sprite2D" parent="HBoxContainer"]
+texture_filter = 1
+position = Vector2(124, 24)
+texture = ExtResource("7_xy3b6")
+
+[node name="SantaTitleLogo3" type="Sprite2D" parent="."]
+process_mode = 1
+texture_filter = 1
+position = Vector2(532, 56)
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("11_cwxiy")
+
+[node name="boss_hpbar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = 95.0
+offset_top = 31.0
+offset_right = 379.0
+offset_bottom = 61.0
+scale = Vector2(0.9, 0.605)
+max_value = 5000.0
+texture_progress = ExtResource("12_pi5wu")
+texture_progress_offset = Vector2(1.385, 0)
+
+[node name="result" parent="." instance=ExtResource("13_xbxim")]
+visible = false
+z_index = 1
+
+[connection signal="end" from="." to="." method="_on_end"]
+[connection signal="timeout" from="phase" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="start" to="." method="_on_start_animation_finished"]

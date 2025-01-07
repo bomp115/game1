@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgxj2jqx7veyi"]
+
+[ext_resource type="Script" path="res://script/enemy/bullet/ene_shot_5.gd" id="1_tpqb5"]
+[ext_resource type="Texture2D" uid="uid://0iqcg1n28cep" path="res://object/bullet/dannmaku_tidama2.png" id="2_sgsyv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eae6r"]
+size = Vector2(3.41131, 3.41131)
+
+[node name="ene_shot_5" type="Area2D" groups=["ene_shot"]]
+script = ExtResource("1_tpqb5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.19209e-07, -1.19209e-07)
+scale = Vector2(0.483, 0.483)
+texture = ExtResource("2_sgsyv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eae6r")

@@ -1,0 +1,136 @@
+[gd_scene load_steps=15 format=3 uid="uid://n8j2gw35fs0f"]
+
+[ext_resource type="Script" path="res://script/UI/tatie/santa_tatie.gd" id="1_2vxt4"]
+[ext_resource type="Shader" path="res://shader/transition2_2.gdshader" id="1_ifj6q"]
+[ext_resource type="Texture2D" uid="uid://cx7y72y28h8su" path="res://object/syu_tatie/syu_tatie20240903_5.png" id="2_mtcp0"]
+[ext_resource type="Texture2D" uid="uid://cl6h6m0qrcx7n" path="res://object/syu_tatie/syu_tatie20240903_6.png" id="3_uk5ea"]
+[ext_resource type="Texture2D" uid="uid://cqhl3y8y8bpqb" path="res://object/syu_tatie/syu_tatie20240903_2.png" id="4_65rku"]
+[ext_resource type="Texture2D" uid="uid://bfrmco3gufas2" path="res://object/syu_tatie/syu_tatie20240903.png" id="5_7c5yb"]
+[ext_resource type="Texture2D" uid="uid://dlswqx6peq3en" path="res://object/syu_tatie/syu_tatie20240903_4.png" id="6_eirhr"]
+[ext_resource type="Texture2D" uid="uid://4fqetvjkuv3o" path="res://object/syu_tatie/syu_tatie20240903_3.png" id="7_mdd0j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6sstx"]
+shader = ExtResource("1_ifj6q")
+shader_parameter/intensity = 1.0
+shader_parameter/scroll_speed = 4.325
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mykuy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mtcp0")
+}],
+"loop": true,
+"name": &"santa_tatie_ang1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uk5ea")
+}],
+"loop": true,
+"name": &"santa_tatie_ang2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_65rku")
+}],
+"loop": true,
+"name": &"santa_tatie_com",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7c5yb")
+}],
+"loop": true,
+"name": &"santa_tatie_confuse1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_eirhr")
+}],
+"loop": true,
+"name": &"santa_tatie_silent",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_mdd0j")
+}],
+"loop": true,
+"name": &"santa_tatie_sup",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_jgtqr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_blgdc"]
+resource_name = "trans_santa_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ava4w"]
+resource_name = "trans_santa_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0dcx3"]
+_data = {
+"RESET": SubResource("Animation_jgtqr"),
+"trans_santa_in": SubResource("Animation_blgdc"),
+"trans_santa_out": SubResource("Animation_ava4w")
+}
+
+[node name="santa_tatie" type="Node2D" groups=["santa_tatie"]]
+script = ExtResource("1_2vxt4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_6sstx")
+position = Vector2(138, 293)
+scale = Vector2(0.49625, 0.49625)
+sprite_frames = SubResource("SpriteFrames_mykuy")
+animation = &"santa_tatie_confuse1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimatedSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_0dcx3")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

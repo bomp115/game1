@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmicipoqy61ia"]
+
+[ext_resource type="Shader" path="res://shader/crt_shader.gdshader" id="1_0nkdq"]
+[ext_resource type="Script" path="res://script/auto_load/crt_filter.gd" id="1_puhsj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_klpq1"]
+shader = ExtResource("1_0nkdq")
+shader_parameter/crt_curve = 0.0
+shader_parameter/crt_scan_line_color = 0.607
+shader_parameter/aperture_grille_rate = 0.607
+shader_parameter/rf_switch_esque_blur = 0.618
+shader_parameter/white_noise_rate = 0.0
+
+[node name="crt_filter" type="Node2D"]
+script = ExtResource("1_puhsj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+light_mask = 513
+visibility_layer = 896
+z_index = 1
+material = SubResource("ShaderMaterial_klpq1")
+offset_right = 640.0
+offset_bottom = 400.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)

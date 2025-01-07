@@ -1,0 +1,110 @@
+[gd_scene load_steps=16 format=3 uid="uid://dr1yl8f1n21jp"]
+
+[ext_resource type="Script" path="res://script/player/player/player.gd" id="1_000xf"]
+[ext_resource type="Texture2D" uid="uid://ljntvqfnr3ca" path="res://object/heroin_flying/heroin_flying1.webp" id="2_3rhk8"]
+[ext_resource type="Texture2D" uid="uid://b7suekdu2yvf0" path="res://object/bullet/bullet_player.png" id="2_lj7y8"]
+[ext_resource type="Texture2D" uid="uid://cyop8v7g2tigk" path="res://object/heroin_flying/heroin_flying2.webp" id="3_w8wh6"]
+[ext_resource type="Texture2D" uid="uid://cibj11g36n46f" path="res://object/heroin_flying/heroin_flying3.webp" id="4_nvxpb"]
+[ext_resource type="Texture2D" uid="uid://dcj7x7a8sea5a" path="res://object/heroin_flying/heroin_flying_yoko1_3.png" id="5_v6bkx"]
+[ext_resource type="Texture2D" uid="uid://on5mhk2bxr4y" path="res://object/heroin_flying/heroin_flying_yoko2_4.png" id="6_v8323"]
+[ext_resource type="Texture2D" uid="uid://0psgms7r0wgv" path="res://object/heroin_flying/heroin_flying_yoko3_3.png" id="7_5x8o5"]
+[ext_resource type="Texture2D" uid="uid://jtdxitwlwegh" path="res://object/heroin_flying/heroin_flying_yoko1_2.png" id="8_8nkpn"]
+[ext_resource type="Texture2D" uid="uid://b3y143h2368sx" path="res://object/heroin_flying/heroin_flying_yoko2_3.png" id="9_2yal0"]
+[ext_resource type="Texture2D" uid="uid://dxab5652ey5rs" path="res://object/heroin_flying/heroin_flying_yoko3_2.png" id="10_0vjuw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n571d"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("2_3rhk8")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_w8wh6")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_nvxpb")
+}],
+"loop": true,
+"name": &"heroin_flying",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("5_v6bkx")
+}, {
+"duration": 0.5,
+"texture": ExtResource("6_v8323")
+}, {
+"duration": 0.5,
+"texture": ExtResource("7_5x8o5")
+}],
+"loop": true,
+"name": &"heroin_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("8_8nkpn")
+}, {
+"duration": 0.5,
+"texture": ExtResource("9_2yal0")
+}, {
+"duration": 0.5,
+"texture": ExtResource("10_0vjuw")
+}],
+"loop": true,
+"name": &"heroin_right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykpw2"]
+size = Vector2(8, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3de16"]
+size = Vector2(17, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afx1s"]
+size = Vector2(112.5, 110)
+
+[node name="player" type="Area2D" groups=["player"]]
+position = Vector2(1, 0)
+script = ExtResource("1_000xf")
+bullet_texture = ExtResource("2_lj7y8")
+bullet_time = 0.1
+
+[node name="heroin_anim" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 2)
+scale = Vector2(0.213333, 0.213333)
+sprite_frames = SubResource("SpriteFrames_n571d")
+animation = &"heroin_right"
+frame_progress = 0.434247
+speed_scale = 1.005
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_ykpw2")
+
+[node name="approach1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="approach1"]
+position = Vector2(-3, 2)
+shape = SubResource("RectangleShape2D_3de16")
+
+[node name="item_close" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item_close"]
+position = Vector2(-1.75, 3)
+shape = SubResource("RectangleShape2D_afx1s")
+
+[node name="invincible_time" type="Timer" parent="."]
+wait_time = 2.277
+one_shot = true
+
+[node name="invicibility" type="Timer" parent="."]
+wait_time = 4.521
+one_shot = true
+
+[connection signal="area_entered" from="." to="." method="_on_bufitem_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_entered" from="approach1" to="." method="_on_approach_1_area_entered"]

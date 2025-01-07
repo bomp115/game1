@@ -1,0 +1,440 @@
+[gd_scene load_steps=45 format=3 uid="uid://cknqdhtq6d1oc"]
+
+[ext_resource type="Shader" path="res://shader/dither.gdshader" id="1_ideu4"]
+[ext_resource type="Script" path="res://script/UI/prologue/prologue.gd" id="1_x7nrx"]
+[ext_resource type="Texture2D" uid="uid://cjgkkcvvn25fj" path="res://object/prologue/santa_house3.png" id="2_8bk7a"]
+[ext_resource type="Texture2D" uid="uid://bojlypx6m5vms" path="res://object/prologue/santa_ani_20240727/santa20240727_2.png" id="3_n7wow"]
+[ext_resource type="Texture2D" uid="uid://dxv6rub1qikcj" path="res://object/prologue/santa_ani_20240726_2/santa20240726_3.png" id="4_7f2sb"]
+[ext_resource type="Texture2D" uid="uid://d2kvyc3jaxd62" path="res://object/prologue/santa_ani_20240727/santa20240727_3.png" id="4_t6tqb"]
+[ext_resource type="Texture2D" uid="uid://brtf8ao4yy5un" path="res://object/prologue/santa_ani_20240727/santa20240727_4.png" id="5_a2xbx"]
+[ext_resource type="Texture2D" uid="uid://lspyxso0ylx1" path="res://object/prologue/santa_ani_20240726_2/santa20240726_4.png" id="5_u7jui"]
+[ext_resource type="Texture2D" uid="uid://h5iv58jnv34i" path="res://object/prologue/santa_ani_20240727/santa20240727_5.png" id="6_mwuta"]
+[ext_resource type="Texture2D" uid="uid://dg4vo4hwi1h0p" path="res://object/prologue/santa_ani_20240726_2/santa20240726_5.png" id="6_o1h2y"]
+[ext_resource type="Texture2D" uid="uid://c3161marhb5ta" path="res://object/prologue/santa_ani_20240727/santa20240727_6.png" id="7_djtkw"]
+[ext_resource type="Texture2D" uid="uid://du3yf3wo8j7in" path="res://object/prologue/santa_ani_20240726_2/santa20240726_6.png" id="7_v86yk"]
+[ext_resource type="Texture2D" uid="uid://s3tcciqynqvs" path="res://object/prologue/santa_ani_20240727/santa20240727_7.png" id="8_27jjd"]
+[ext_resource type="Texture2D" uid="uid://bnxnd08afdten" path="res://object/prologue/santa_ani_20240726_2/santa20240726_7.png" id="8_mares"]
+[ext_resource type="Texture2D" uid="uid://dqik2wy35omvy" path="res://object/prologue/santa_ani_20240727/santa20240727_8.png" id="9_8uddb"]
+[ext_resource type="Texture2D" uid="uid://b4smkhrj3so5d" path="res://object/prologue/santa_ani_20240726_2/santa20240726_8.png" id="9_mc1ji"]
+[ext_resource type="Texture2D" uid="uid://b0qafgvdkk42j" path="res://object/prologue/santa_ani_20240726_2/santa20240726_9.png" id="10_2n56j"]
+[ext_resource type="Texture2D" uid="uid://bqubgsgpnm5mf" path="res://object/prologue/santa20240729.png" id="10_axssb"]
+[ext_resource type="Texture2D" uid="uid://mkj1hcjnk76" path="res://object/prologue/santa20240802_ani1.png" id="11_sxpll"]
+[ext_resource type="Texture2D" uid="uid://hxik15cca5ee" path="res://object/prologue/santa20240807.png" id="12_sa0fr"]
+[ext_resource type="Texture2D" uid="uid://c7quba8lcyiv7" path="res://object/prologue/santa20240815_2.png" id="13_j33hh"]
+[ext_resource type="Texture2D" uid="uid://dq4vrqafdcp8j" path="res://object/prologue/santa20240817_2.png" id="14_e6alk"]
+[ext_resource type="PackedScene" uid="uid://cmuvyg278yfng" path="res://script/UI/message/message.tscn" id="15_14h0i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m7bnq"]
+shader = ExtResource("1_ideu4")
+shader_parameter/intensity = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qdx6f"]
+shader = ExtResource("1_ideu4")
+shader_parameter/intensity = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b4wdm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7f2sb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u7jui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o1h2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_v86yk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mares")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mc1ji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2n56j")
+}],
+"loop": true,
+"name": &"pic5_ani",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2uqrc"]
+shader = ExtResource("1_ideu4")
+shader_parameter/intensity = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jhftx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_n7wow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t6tqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a2xbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mwuta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_djtkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_27jjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8uddb")
+}],
+"loop": true,
+"name": &"pic2_ani",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2g1s4"]
+shader = ExtResource("1_ideu4")
+shader_parameter/intensity = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7y1g5"]
+shader = ExtResource("1_ideu4")
+shader_parameter/intensity = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mi1la"]
+shader = ExtResource("1_ideu4")
+shader_parameter/intensity = 0.0
+
+[sub_resource type="Animation" id="Animation_qauv6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SantaHouse3:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pic2:material:shader_parameter/intensity")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Santa20240729:material:shader_parameter/intensity")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Santa20240802Ani1:material:shader_parameter/intensity")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Santa202408172:material:shader_parameter/intensity")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("pic5:material:shader_parameter/intensity")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_jdlvx"]
+resource_name = "pic1_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SantaHouse3:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_oc2sp"]
+resource_name = "pic1_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SantaHouse3:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_n8pab"]
+resource_name = "pic2_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pic2:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_f3y8a"]
+resource_name = "pic2_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pic2:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_b055b"]
+resource_name = "pic3_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Santa20240729:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_lunxv"]
+resource_name = "pic3_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Santa20240729:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_ybpox"]
+resource_name = "pic4_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Santa20240802Ani1:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kjlkg"]
+resource_name = "pic4_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Santa20240802Ani1:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_1bitf"]
+resource_name = "pic5_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pic5:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0e0x5"]
+resource_name = "pic5_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pic5:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_cskgd"]
+resource_name = "pic7_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Santa202408172:material:shader_parameter/intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qkxv7"]
+_data = {
+"RESET": SubResource("Animation_qauv6"),
+"pic1_in": SubResource("Animation_jdlvx"),
+"pic1_out": SubResource("Animation_oc2sp"),
+"pic2_in": SubResource("Animation_n8pab"),
+"pic2_out": SubResource("Animation_f3y8a"),
+"pic3_in": SubResource("Animation_b055b"),
+"pic3_out": SubResource("Animation_lunxv"),
+"pic4_in": SubResource("Animation_ybpox"),
+"pic4_out": SubResource("Animation_kjlkg"),
+"pic5_in": SubResource("Animation_1bitf"),
+"pic5_out": SubResource("Animation_0e0x5"),
+"pic7_out": SubResource("Animation_cskgd")
+}
+
+[node name="prologue" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_x7nrx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 400.0
+color = Color(0, 0, 0, 1)
+
+[node name="SantaHouse3" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_m7bnq")
+position = Vector2(320, 170)
+scale = Vector2(0.555, 0.555)
+texture = ExtResource("2_8bk7a")
+
+[node name="pic5" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_qdx6f")
+position = Vector2(320, 170)
+scale = Vector2(0.6125, 0.6125)
+sprite_frames = SubResource("SpriteFrames_b4wdm")
+animation = &"pic5_ani"
+frame_progress = 0.987091
+
+[node name="pic2" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_2uqrc")
+position = Vector2(320, 170)
+scale = Vector2(0.61375, 0.61375)
+sprite_frames = SubResource("SpriteFrames_jhftx")
+animation = &"pic2_ani"
+frame_progress = 0.284167
+speed_scale = 1.33
+
+[node name="Santa20240729" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_2g1s4")
+position = Vector2(320, 170)
+scale = Vector2(0.6375, 0.6375)
+texture = ExtResource("10_axssb")
+
+[node name="Santa20240802Ani1" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7y1g5")
+position = Vector2(320, 170)
+scale = Vector2(0.635, 0.635)
+texture = ExtResource("11_sxpll")
+
+[node name="Santa20240807" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(320, 170)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("12_sa0fr")
+
+[node name="Santa202408152" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(320, 170)
+scale = Vector2(0.635, 0.635)
+texture = ExtResource("13_j33hh")
+
+[node name="Santa202408172" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_mi1la")
+position = Vector2(320, 170)
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("14_e6alk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qkxv7")
+}
+
+[node name="message" parent="." instance=ExtResource("15_14h0i")]
+fit_content = true
+scroll_following = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="chr_time" from="message" to="." method="_on_message_chr_time"]

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck77ie5nju0ch"]
+
+[ext_resource type="Script" path="res://script/item/score_item/score_item.gd" id="1_a1cdp"]
+[ext_resource type="Texture2D" uid="uid://busb4je5wfkr3" path="res://object/score_item/score_item3/score_item3_1.png" id="2_4orro"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfir2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rq7qt"]
+size = Vector2(128, 133)
+
+[node name="water" type="Area2D"]
+script = ExtResource("1_a1cdp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xfir2")
+
+[node name="ScoreItem31" type="Sprite2D" parent="."]
+texture = ExtResource("2_4orro")
+
+[node name="item_close" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item_close"]
+shape = SubResource("RectangleShape2D_rq7qt")
+
+[connection signal="area_entered" from="." to="." method="_on_water_area_entered"]
+[connection signal="area_entered" from="item_close" to="." method="_on_item_close_area_entered"]

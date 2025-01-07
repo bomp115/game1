@@ -1,0 +1,406 @@
+[gd_scene load_steps=38 format=3 uid="uid://cy0wwpwvog7bt"]
+
+[ext_resource type="FontFile" uid="uid://xg47m55sxhbx" path="res://object/font/pc_9800_bold.ttf" id="1_hvva0"]
+[ext_resource type="FontFile" uid="uid://dmvkns7s48n77" path="res://object/font/pc_9800.ttf" id="1_sjnhv"]
+[ext_resource type="Texture2D" uid="uid://edo5xtq7b38k" path="res://object/frame/frame7.png" id="1_u0g3v"]
+[ext_resource type="Script" path="res://script/UI/title/option_ui.gd" id="2_0y354"]
+[ext_resource type="Texture2D" uid="uid://bvbi0hw4x2toj" path="res://object/frame/frame4.png" id="2_ry68e"]
+[ext_resource type="Texture2D" uid="uid://p32mycwhi73y" path="res://object/background/title_back3.png" id="2_vqikh"]
+[ext_resource type="Shader" path="res://shader/back_loop.gdshader" id="3_dx5p0"]
+[ext_resource type="Texture2D" uid="uid://ce18knpaacyce" path="res://object/frame/frame5.png" id="3_phkij"]
+[ext_resource type="Texture2D" uid="uid://duhnnvamdqka8" path="res://object/frame/frame4_press.png" id="3_qn24h"]
+[ext_resource type="Texture2D" uid="uid://dfivia8u5frtn" path="res://object/frame/border1.png" id="5_ehkya"]
+[ext_resource type="Texture2D" uid="uid://073s1ynbfabf" path="res://object/frame/soto_waku2.png" id="6_k7vm2"]
+[ext_resource type="Texture2D" uid="uid://dv8mncik5i52i" path="res://object/scroll_bar/scroll_bar1.png" id="8_63xls"]
+[ext_resource type="Texture2D" uid="uid://ck413slxbgxm3" path="res://object/scroll_bar/scroll_pointer1.png" id="9_p88a5"]
+
+[sub_resource type="Theme" id="Theme_8jpkc"]
+default_font = ExtResource("1_sjnhv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mmh2k"]
+shader = ExtResource("3_dx5p0")
+shader_parameter/scrool_speed = 0.1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uky7o"]
+texture = ExtResource("6_k7vm2")
+expand_margin_left = 30.0
+expand_margin_top = 9.0
+expand_margin_right = 24.0
+expand_margin_bottom = 2.0
+region_rect = Rect2(32, 34, 24, 23)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eyn6g"]
+font = ExtResource("1_hvva0")
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0.0156863, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.403922)
+shadow_offset = Vector2(2.41, 2.505)
+
+[sub_resource type="LabelSettings" id="LabelSettings_70aiu"]
+line_spacing = 3.82
+font = ExtResource("1_hvva0")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ssfvf"]
+font = ExtResource("1_hvva0")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_whekq"]
+font = ExtResource("1_hvva0")
+font_size = 21
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5506d"]
+font = ExtResource("1_hvva0")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_a05ca"]
+font = ExtResource("1_hvva0")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pbest"]
+texture = ExtResource("8_63xls")
+expand_margin_top = 8.0
+expand_margin_bottom = 9.0
+region_rect = Rect2(2, 4, 235, 19)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5xebk"]
+texture = ExtResource("2_ry68e")
+expand_margin_right = 2.0
+region_rect = Rect2(215, 181, 175, 65)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ebe4v"]
+texture = ExtResource("3_qn24h")
+expand_margin_right = 2.0
+region_rect = Rect2(215, 181, 175, 65)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6cd0c"]
+texture = ExtResource("2_ry68e")
+expand_margin_left = 1.0
+expand_margin_right = 2.0
+region_rect = Rect2(215, 181, 175, 65)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a1fsb"]
+texture = ExtResource("3_qn24h")
+expand_margin_left = 1.0
+expand_margin_right = 2.0
+region_rect = Rect2(215, 181, 175, 65)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eg85t"]
+texture = ExtResource("2_ry68e")
+texture_margin_left = 4.0
+texture_margin_right = 3.0
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+region_rect = Rect2(215, 181, 175, 65)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sgn0f"]
+texture = ExtResource("3_qn24h")
+texture_margin_left = 4.0
+texture_margin_right = 3.0
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+region_rect = Rect2(215, 181, 175, 65)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3eata"]
+draw_center = false
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wpgmk"]
+texture = ExtResource("2_ry68e")
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+region_rect = Rect2(215, 181, 175, 65)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hfdib"]
+texture = ExtResource("3_qn24h")
+expand_margin_left = 2.0
+expand_margin_right = 2.0
+region_rect = Rect2(215, 181, 175, 65)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5444k"]
+draw_center = false
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gkip"]
+texture = ExtResource("2_ry68e")
+region_rect = Rect2(215, 181, 175, 65)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1hf8l"]
+texture = ExtResource("3_qn24h")
+region_rect = Rect2(215, 181, 175, 65)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cki75"]
+texture = ExtResource("2_ry68e")
+region_rect = Rect2(215, 181, 175, 65)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucr4a"]
+draw_center = false
+
+[node name="option_ui" type="Control"]
+process_mode = 3
+process_priority = 2
+process_physics_priority = 2
+custom_minimum_size = Vector2(-0.1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_8jpkc")
+script = ExtResource("2_0y354")
+
+[node name="TitleBack1" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_mmh2k")
+position = Vector2(320, 200)
+texture = ExtResource("2_vqikh")
+
+[node name="Frame6" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(318, 200)
+scale = Vector2(0.97, 0.97)
+texture = ExtResource("1_u0g3v")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 274.0
+offset_top = 309.0
+offset_right = 914.0
+offset_bottom = 709.0
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("3_phkij")
+
+[node name="option_label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.04
+anchor_right = 0.5
+anchor_bottom = 0.087
+offset_left = -43.0
+offset_top = 28.0
+offset_right = 47.0
+offset_bottom = 35.2
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_uky7o")
+text = " オプション  "
+label_settings = SubResource("LabelSettings_eyn6g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.029
+offset_left = 55.0
+offset_top = 70.0
+offset_right = 284.44
+offset_bottom = 406.0
+theme_override_constants/separation = -7
+
+[node name="sound" type="Label" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "サウンド"
+label_settings = SubResource("LabelSettings_70aiu")
+
+[node name="Border1" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_ehkya")
+flip_v = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 107
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="translation" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "言語"
+label_settings = SubResource("LabelSettings_ssfvf")
+
+[node name="Border3" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_ehkya")
+flip_v = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 66
+
+[node name="CRT" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "CRTフィルター"
+label_settings = SubResource("LabelSettings_whekq")
+
+[node name="Border2" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_ehkya")
+flip_v = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = 117.0
+offset_right = 194.0
+offset_bottom = 238.0
+theme_override_constants/separation = -21
+
+[node name="bgm" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "BGM"
+label_settings = SubResource("LabelSettings_5506d")
+
+[node name="Border1" type="TextureRect" parent="VBoxContainer2"]
+visible = false
+layout_mode = 2
+texture = ExtResource("5_ehkya")
+flip_v = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 84
+
+[node name="se" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "SE"
+label_settings = SubResource("LabelSettings_a05ca")
+
+[node name="Border2" type="TextureRect" parent="VBoxContainer2"]
+visible = false
+layout_mode = 2
+texture = ExtResource("5_ehkya")
+flip_v = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.062
+anchor_bottom = 0.1
+offset_left = 173.0
+offset_top = 107.0
+offset_right = 455.32
+offset_bottom = 183.0
+theme_override_constants/separation = -5
+
+[node name="bgm_slider" type="HSlider" parent="VBoxContainer3"]
+texture_filter = 1
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("9_p88a5")
+theme_override_icons/grabber_highlight = ExtResource("9_p88a5")
+theme_override_styles/slider = SubResource("StyleBoxTexture_pbest")
+step = 0.0
+value = 50.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer3"]
+layout_mode = 2
+theme_override_constants/margin_top = 31
+
+[node name="se_slider" type="HSlider" parent="VBoxContainer3"]
+texture_filter = 1
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("9_p88a5")
+theme_override_icons/grabber_highlight = ExtResource("9_p88a5")
+theme_override_styles/slider = SubResource("StyleBoxTexture_pbest")
+step = 0.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 217.0
+offset_top = 254.0
+offset_right = 430.0
+offset_bottom = 278.0
+theme_override_constants/separation = 112
+
+[node name="jp" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_5xebk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ebe4v")
+text = "日本語"
+
+[node name="en" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_6cd0c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_a1fsb")
+text = "英語"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(5.26, 0)
+layout_mode = 0
+offset_left = 209.0
+offset_top = 335.0
+offset_right = 343.0
+offset_bottom = 359.0
+scale = Vector2(1.91, 1.91)
+theme_override_constants/separation = 54
+
+[node name="crt_on" type="Button" parent="HBoxContainer"]
+texture_filter = 1
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_hvva0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_eg85t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_sgn0f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sgn0f")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3eata")
+toggle_mode = true
+text = "O N"
+
+[node name="crt_off" type="Button" parent="HBoxContainer"]
+texture_filter = 1
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 13
+size_flags_vertical = 5
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_hvva0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wpgmk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hfdib")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hfdib")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5444k")
+text = "OFF"
+
+[node name="back" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = -43.0
+offset_right = -42.0
+offset_bottom = -19.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_hvva0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8gkip")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1hf8l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cki75")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ucr4a")
+text = "戻る"
+
+[connection signal="value_changed" from="VBoxContainer3/bgm_slider" to="." method="_on_bgm_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer3/se_slider" to="." method="_on_se_slider_value_changed"]
+[connection signal="pressed" from="HBoxContainer2/jp" to="." method="_on_language_pressed" binds= [0]]
+[connection signal="pressed" from="HBoxContainer2/en" to="." method="_on_language_pressed" binds= [1]]
+[connection signal="mouse_entered" from="HBoxContainer/crt_on" to="." method="_on_crt_on_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/crt_on" to="." method="_on_crt_on_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/crt_off" to="." method="_on_crt_off_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/crt_off" to="." method="_on_crt_off_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

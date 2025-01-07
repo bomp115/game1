@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmuvyg278yfng"]
+
+[ext_resource type="FontFile" uid="uid://dmvkns7s48n77" path="res://object/font/pc_9800.ttf" id="1_71al4"]
+[ext_resource type="Script" path="res://script/UI/message/message.gd" id="1_l57ny"]
+
+[node name="message" type="RichTextLabel"]
+offset_left = 203.0
+offset_top = 300.0
+offset_right = 442.0
+offset_bottom = 364.0
+theme_override_fonts/normal_font = ExtResource("1_71al4")
+bbcode_enabled = true
+script = ExtResource("1_l57ny")
+
+[node name="chr_time" type="Timer" parent="."]
+wait_time = 1.986
+one_shot = true
+
+[connection signal="timeout" from="chr_time" to="." method="_on_chr_time_timeout"]

@@ -1,0 +1,132 @@
+#
+# AUTHOR NAME <EMAIL@DOMAIN.COM>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Project Name\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Last Translator\n"
+"Language-Team: none\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"PO-Revision-Date: 2024-07-15 21:30-0900\n"
+
+msgid "操作"
+msgstr "Guide   "
+
+msgid "アイテム"
+msgstr "  Item"
+
+msgid "オプション"
+msgstr "OPTION"
+
+msgid " オプション  "
+msgstr "  OPTION"
+
+msgid "説明"
+msgstr "HELP"
+
+msgid "はじめる"
+msgstr "START"
+
+msgid "Zキー:ショット"
+msgstr "Z.Key:Shot"
+
+msgid "方向キー：移動"
+msgstr "Arrow.Key:Movement"
+
+msgid "Xキー：ボム"
+msgstr "X.Key:Bomb"
+
+msgid "Escキー：オプション"
+msgstr "Esc.Key:Option"
+
+msgid "パワーアップ"
+msgstr "  Power Up"
+
+msgid "スコア"
+msgstr " Score"
+
+msgid "バリア"
+msgstr "Barrier"
+
+msgid "ウェポン１"
+msgstr "Weapon1"
+
+msgid "ウェポン２"
+msgstr "Weapon2"
+
+msgid "サブウェポン"
+msgstr "Sub Weapon"
+
+msgid "ライフアップ"
+msgstr "LifeUp"
+
+msgid "モード"
+msgstr "MODE"
+
+msgid "簡単"
+msgstr "Eazy"
+
+msgid "普通"
+msgstr "Normal"
+
+msgid "難しい"
+msgstr "Hard"
+
+msgid "戻る"
+msgstr "Back"
+
+msgid "CRTフィルター"
+msgstr "CRT.Filter"
+
+
+
+
+
+msgid "やり直す"
+msgstr "ReStart"
+
+msgid "タイトルへ戻る"
+msgstr "Back to Title"
+
+msgid "接近"
+msgstr "Approach"
+
+msgid "コンティニュー"
+msgstr "Continue"
+
+msgid "難易度：簡単"
+msgstr "MODE:Eazy"
+
+msgid "難易度：普通"
+msgstr "MODE:Normal"
+
+msgid "難易度：難しい"
+msgstr "MODE:Hard"
+
+msgid "　　もう一度やる？"
+msgstr "　　Play again?"
+
+msgid "リトライ"
+msgstr "Retry"
+
+msgid "やめる"
+msgstr "Back to Title"
+
+msgid "サウンド"
+msgstr "SOUND"
+
+msgid "ちょっと待ってね"
+msgstr "Wait a minute."
+
+msgid "言語"
+msgstr "Language"
+
+msgid "日本語"
+msgstr "Japanese"
+
+msgid "英語"
+msgstr "English"

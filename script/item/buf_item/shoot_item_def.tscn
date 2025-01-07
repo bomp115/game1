@@ -1,0 +1,60 @@
+[gd_scene load_steps=13 format=3 uid="uid://d2wclj40udnet"]
+
+[ext_resource type="Script" path="res://script/item/buf_item/shoot_item_def.gd" id="1_b68qi"]
+[ext_resource type="Texture2D" uid="uid://b7hbeb1j7dfjg" path="res://object/buf_item1/shoot_item2/shoot_item2_1.png" id="2_7muno"]
+[ext_resource type="Texture2D" uid="uid://b5cc6mmmvvlhb" path="res://object/buf_item1/shoot_item2/shoot_item2_2.png" id="3_oa21g"]
+[ext_resource type="Texture2D" uid="uid://c8biqw32o0s7r" path="res://object/buf_item1/shoot_item2/shoot_item2_3.png" id="4_ktya7"]
+[ext_resource type="Texture2D" uid="uid://d1onjaf555iiw" path="res://object/buf_item1/shoot_item2/shoot_item2_4.png" id="5_y6q3c"]
+[ext_resource type="Texture2D" uid="uid://5850g3uh00kv" path="res://object/buf_item1/shoot_item2/shoot_item2_5.png" id="6_wy45i"]
+[ext_resource type="Texture2D" uid="uid://bel8gpmpwkyuc" path="res://object/buf_item1/shoot_item2/shoot_item2_6.png" id="7_1k6ck"]
+[ext_resource type="Texture2D" uid="uid://5cpbwgh0snv5" path="res://object/buf_item1/shoot_item2/shoot_item2_7.png" id="8_s52bu"]
+[ext_resource type="Texture2D" uid="uid://d10kp7l5th27m" path="res://object/buf_item1/shoot_item2/shoot_item2_8.png" id="9_b080s"]
+[ext_resource type="Texture2D" uid="uid://cmofh8mdfm1ax" path="res://object/buf_item1/shoot_item2/shoot_item2_9.png" id="10_37ojl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a1gus"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vt8xy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7muno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_oa21g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ktya7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y6q3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wy45i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1k6ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s52bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_b080s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_37ojl")
+}],
+"loop": true,
+"name": &"shoot_item2",
+"speed": 5.0
+}]
+
+[node name="shoot_item_def" type="Area2D" groups=["shoot_item_def"]]
+script = ExtResource("1_b68qi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a1gus")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vt8xy")
+animation = &"shoot_item2"
+autoplay = "shoot_item2"

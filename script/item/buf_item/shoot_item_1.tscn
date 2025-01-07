@@ -1,0 +1,66 @@
+[gd_scene load_steps=13 format=3 uid="uid://ck872ios6jo0q"]
+
+[ext_resource type="Script" path="res://script/item/buf_item/shoot_item1.gd" id="1_psm7c"]
+[ext_resource type="Texture2D" uid="uid://c5tdnfl0qb8ar" path="res://object/buf_item1/shoot_item/shoot_item1_1.png" id="2_1734t"]
+[ext_resource type="Texture2D" uid="uid://bgdgqjua2qjx5" path="res://object/buf_item1/shoot_item/shoot_item1_2.png" id="3_e60sq"]
+[ext_resource type="Texture2D" uid="uid://cohqggphq21sn" path="res://object/buf_item1/shoot_item/shoot_item1_3.png" id="4_4g654"]
+[ext_resource type="Texture2D" uid="uid://cq7xio6xmx4a0" path="res://object/buf_item1/shoot_item/shoot_item1_4.png" id="5_xp6gg"]
+[ext_resource type="Texture2D" uid="uid://dh18nyd3retsx" path="res://object/buf_item1/shoot_item/shoot_item1_5.png" id="6_5go8e"]
+[ext_resource type="Texture2D" uid="uid://cfvbpbwl7xcrm" path="res://object/buf_item1/shoot_item/shoot_item1_6.png" id="7_bdebo"]
+[ext_resource type="Texture2D" uid="uid://d4cnyscbf40to" path="res://object/buf_item1/shoot_item/shoot_item1_7.png" id="8_jyqt0"]
+[ext_resource type="Texture2D" uid="uid://bl5pm008ypidd" path="res://object/buf_item1/shoot_item/shoot_item1_8.png" id="9_fdqp5"]
+[ext_resource type="Texture2D" uid="uid://d1aum8kfv0ty2" path="res://object/buf_item1/shoot_item/shoot_item1_9.png" id="10_41jsy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hhq17"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1734t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e60sq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4g654")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xp6gg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5go8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bdebo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jyqt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fdqp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_41jsy")
+}],
+"loop": true,
+"name": &"shoot_item1",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mlfag"]
+
+[node name="shoot_item1" type="Area2D" groups=["shoot_item1"]]
+texture_filter = 1
+script = ExtResource("1_psm7c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hhq17")
+animation = &"shoot_item1"
+autoplay = "shoot_item1"
+frame_progress = 0.000425259
+speed_scale = 2.29
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_mlfag")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

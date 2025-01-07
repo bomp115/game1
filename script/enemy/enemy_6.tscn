@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://cerhy082jxjes"]
+
+[ext_resource type="Script" path="res://script/enemy/enemy_6_2.gd" id="1_2fjq7"]
+[ext_resource type="Texture2D" uid="uid://t4luuubc7i08" path="res://object/enemy/ene2_1.png" id="1_5i2ww"]
+[ext_resource type="Texture2D" uid="uid://dosqdwiapee4e" path="res://object/enemy/ene2_2.png" id="2_d2qw7"]
+[ext_resource type="Texture2D" uid="uid://dmeg3dfxp60pp" path="res://object/enemy/ene2_3.png" id="3_02kt3"]
+
+[sub_resource type="Curve2D" id="Curve2D_4xrmu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 4, 5, 0, 0, 0, 0, 47, 103, 0, 0, 0, 0, 180, 322, 0, 0, 0, 0, 194, 182, 0, 0, 0, 0, 50, 172, 0, 0, 0, 0, 28, 191, 0, 0, 0, 0, 142, 321, 0, 0, 0, 0, 72, 318, 0, 0, 0, 0, 139, 162, 0, 0, 0, 0, 148, 86, 0, 0, 0, 0, 274, 251)
+}
+point_count = 11
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_edaf8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5i2ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d2qw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_02kt3")
+}],
+"loop": true,
+"name": &"def",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pedcv"]
+size = Vector2(22.1015, 19.3273)
+
+[node name="enemy_6_path" type="Path2D" groups=["enemy"]]
+curve = SubResource("Curve2D_4xrmu")
+script = ExtResource("1_2fjq7")
+
+[node name="enemy6_follow" type="PathFollow2D" parent="."]
+position = Vector2(4, 5)
+rotation = 1.15732
+loop = false
+
+[node name="enemy_6" type="Area2D" parent="enemy6_follow"]
+rotation = -0.97872
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy6_follow/enemy_6"]
+texture_filter = 1
+rotation = -0.670616
+scale = Vector2(1, 0.993024)
+sprite_frames = SubResource("SpriteFrames_edaf8")
+animation = &"def"
+frame_progress = 0.202968
+speed_scale = 1.73
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy6_follow/enemy_6"]
+position = Vector2(4.24224, 8.88839)
+rotation = -0.785693
+shape = SubResource("RectangleShape2D_pedcv")
+
+[connection signal="area_entered" from="enemy6_follow/enemy_6" to="." method="_on_enemy_6_area_entered"]

@@ -1,0 +1,115 @@
+[gd_scene load_steps=12 format=3 uid="uid://bop6skt5y67cx"]
+
+[ext_resource type="Texture2D" uid="uid://bam6jt3o0cd27" path="res://object/frame/mode_frame.png" id="1_86hvb"]
+[ext_resource type="Script" path="res://script/UI/menu/mode_menu.gd" id="1_u8m77"]
+[ext_resource type="FontFile" uid="uid://dmvkns7s48n77" path="res://object/font/pc_9800.ttf" id="2_b7at0"]
+[ext_resource type="Texture2D" uid="uid://bvbi0hw4x2toj" path="res://object/frame/frame4.png" id="3_igwk7"]
+[ext_resource type="Texture2D" uid="uid://duhnnvamdqka8" path="res://object/frame/frame4_press.png" id="4_7g3e7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aqxui"]
+texture = ExtResource("3_igwk7")
+texture_margin_top = 9.0
+texture_margin_bottom = 9.0
+region_rect = Rect2(215, 181, 175, 65)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r7fqa"]
+texture = ExtResource("4_7g3e7")
+texture_margin_top = 9.0
+texture_margin_bottom = 9.0
+region_rect = Rect2(215, 181, 175, 65)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2jty"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gl1se"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6q3w"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7sie"]
+draw_center = false
+
+[node name="mode_menu" type="Control"]
+process_mode = 2
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u8m77")
+
+[node name="ModeFrame" type="Sprite2D" parent="."]
+position = Vector2(344, 185)
+texture = ExtResource("1_86hvb")
+
+[node name="Label" type="Label" parent="ModeFrame"]
+anchors_preset = -1
+anchor_left = 0.269
+anchor_top = 0.285
+anchor_right = 0.269
+anchor_bottom = 0.285
+offset_left = -253.16
+offset_top = -196.0
+offset_right = -128.16
+offset_bottom = -163.0
+theme_override_fonts/font = ExtResource("2_b7at0")
+text = "モード"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ModeFrame"]
+offset_left = -69.0
+offset_top = -26.0
+offset_right = 36.0
+offset_bottom = 82.0
+
+[node name="eazy" type="Button" parent="ModeFrame/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b7at0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aqxui")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r7fqa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r7fqa")
+theme_override_styles/focus = SubResource("StyleBoxFlat_h2jty")
+text = "簡単"
+
+[node name="normal" type="Button" parent="ModeFrame/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b7at0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aqxui")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r7fqa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r7fqa")
+theme_override_styles/focus = SubResource("StyleBoxFlat_gl1se")
+text = "普通"
+
+[node name="hard" type="Button" parent="ModeFrame/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b7at0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aqxui")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r7fqa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r7fqa")
+theme_override_styles/focus = SubResource("StyleBoxFlat_h6q3w")
+text = "難しい"
+
+[node name="back" type="Button" parent="ModeFrame"]
+offset_left = 51.0
+offset_top = 76.0
+offset_right = 88.0
+offset_bottom = 107.0
+theme_override_fonts/font = ExtResource("2_b7at0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q7sie")
+text = "戻る"
+flat = true
+
+[connection signal="pressed" from="ModeFrame/VBoxContainer/eazy" to="." method="_on_eazy_pressed"]
+[connection signal="pressed" from="ModeFrame/VBoxContainer/normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="ModeFrame/VBoxContainer/hard" to="." method="_on_hard_pressed"]
+[connection signal="mouse_entered" from="ModeFrame/back" to="." method="_on_back_mouse_entered"]
+[connection signal="mouse_exited" from="ModeFrame/back" to="." method="_on_back_mouse_exited"]
+[connection signal="pressed" from="ModeFrame/back" to="." method="_on_back_pressed"]

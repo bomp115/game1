@@ -1,0 +1,134 @@
+[gd_scene load_steps=6 format=3 uid="uid://bw65ydcv6mms6"]
+
+[ext_resource type="Script" path="res://script/UI/menu/pause_ui.gd" id="1_0p8vw"]
+[ext_resource type="FontFile" uid="uid://xg47m55sxhbx" path="res://object/font/pc_9800_bold.ttf" id="2_wwtbr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w01oc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxswi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1tue"]
+draw_center = false
+
+[node name="pause_ui" type="Control" groups=["pause"]]
+process_mode = 2
+custom_minimum_size = Vector2(0, 15.875)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0p8vw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.243137)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -141.0
+offset_right = 126.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+process_mode = 3
+clip_contents = true
+custom_minimum_size = Vector2(40.685, 20.485)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.501992
+anchor_bottom = 0.505
+offset_left = -43.5
+offset_top = -80.5
+offset_right = 44.0
+offset_bottom = 82.87
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-0.13, 14.87)
+theme_override_constants/separation = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="back" type="Button" parent="ColorRect/VBoxContainer"]
+process_priority = 1
+process_physics_priority = 1
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("2_wwtbr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_w01oc")
+text = "戻る"
+flat = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(1.105, 19.825)
+layout_mode = 2
+
+[node name="option" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 0.77)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wwtbr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hxswi")
+text = "オプション"
+flat = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(1.105, 19.825)
+layout_mode = 2
+
+[node name="save" type="Button" parent="ColorRect/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wwtbr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_a1tue")
+text = "セーブ"
+flat = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(1.105, 19.825)
+layout_mode = 2
+
+[node name="load" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wwtbr")
+text = "やり直す"
+flat = true
+
+[node name="MarginContainer4" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(1.105, 19.825)
+layout_mode = 2
+
+[node name="title" type="Button" parent="ColorRect/VBoxContainer"]
+process_mode = 2
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wwtbr")
+text = "タイトルへ戻る"
+flat = true
+
+[connection signal="mouse_entered" from="ColorRect/VBoxContainer/back" to="." method="_on_mouse_entered" binds= [0]]
+[connection signal="mouse_exited" from="ColorRect/VBoxContainer/back" to="." method="_on_mouse_exited" binds= [0]]
+[connection signal="pressed" from="ColorRect/VBoxContainer/back" to="." method="_on_back_pressed"]
+[connection signal="mouse_entered" from="ColorRect/VBoxContainer/option" to="." method="_on_mouse_entered" binds= [1]]
+[connection signal="mouse_exited" from="ColorRect/VBoxContainer/option" to="." method="_on_mouse_exited" binds= [1]]
+[connection signal="pressed" from="ColorRect/VBoxContainer/option" to="." method="_on_option_pressed"]
+[connection signal="mouse_entered" from="ColorRect/VBoxContainer/load" to="." method="_on_mouse_entered" binds= [2]]
+[connection signal="mouse_exited" from="ColorRect/VBoxContainer/load" to="." method="_on_mouse_exited" binds= [2]]
+[connection signal="pressed" from="ColorRect/VBoxContainer/load" to="." method="_on_load_pressed"]
+[connection signal="mouse_entered" from="ColorRect/VBoxContainer/title" to="." method="_on_mouse_entered" binds= [3]]
+[connection signal="mouse_exited" from="ColorRect/VBoxContainer/title" to="." method="_on_mouse_exited" binds= [3]]
+[connection signal="pressed" from="ColorRect/VBoxContainer/title" to="." method="_on_title_pressed"]

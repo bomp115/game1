@@ -1,0 +1,132 @@
+[gd_scene load_steps=24 format=3 uid="uid://cytqujxby8ns4"]
+
+[ext_resource type="Script" path="res://script/boss/boss1.gd" id="1_ndtjv"]
+[ext_resource type="Texture2D" uid="uid://bybphjk20gmr2" path="res://object/boss1/vampire20240731.png" id="2_p8nfm"]
+[ext_resource type="Texture2D" uid="uid://b4k47g5qnfu6w" path="res://object/boss1/back/vampire20240729_back1.png" id="3_8xei6"]
+[ext_resource type="Texture2D" uid="uid://b47djx5h4t747" path="res://object/boss1/back/vampire20240729_back2.png" id="4_yeo67"]
+[ext_resource type="Texture2D" uid="uid://c3jalka85i1jd" path="res://object/boss1/back/vampire20240729_back3.png" id="5_mdds3"]
+[ext_resource type="Texture2D" uid="uid://cjovnxloni4e0" path="res://object/boss1/back/vampire20240729_back4.png" id="6_7mmg5"]
+[ext_resource type="Texture2D" uid="uid://2yybsgprhgw8" path="res://object/boss1/back/vampire20240729_back5.png" id="7_lg6gj"]
+[ext_resource type="Texture2D" uid="uid://d0e1lc4xl7ya4" path="res://object/boss1/def/vampire20240729.png" id="8_xfb0c"]
+[ext_resource type="Texture2D" uid="uid://bo5pu6cnykfu7" path="res://object/boss1/def/vampire20240730.png" id="9_jax0w"]
+[ext_resource type="Texture2D" uid="uid://bs5gky2igigtt" path="res://object/boss1/def/vampire20240731.png" id="10_c0cj6"]
+[ext_resource type="Texture2D" uid="uid://bip1rom7sffjp" path="res://object/boss1/def/vampire20240732.png" id="11_e516i"]
+[ext_resource type="Texture2D" uid="uid://cxurj6wmegf8q" path="res://object/boss1/def/vampire20240733.png" id="12_g7g13"]
+[ext_resource type="Texture2D" uid="uid://cpaj2k7lce53f" path="res://object/boss1/front/vampire20240729_front_ani1.png" id="14_ajswf"]
+[ext_resource type="Texture2D" uid="uid://gl407cgqr2di" path="res://object/boss1/front/vampire20240729_front_ani2.png" id="15_dggh1"]
+[ext_resource type="Texture2D" uid="uid://cw7ob7hdkcoxm" path="res://object/boss1/front/vampire20240729_front_ani3.png" id="16_t1845"]
+[ext_resource type="Texture2D" uid="uid://o7qsv76t7tjt" path="res://object/boss1/left/vampire20240730_le1.png" id="17_dr8m1"]
+[ext_resource type="Texture2D" uid="uid://bymp3wa0l57ap" path="res://object/boss1/left/vampire20240730_le2.png" id="18_smwtm"]
+[ext_resource type="Texture2D" uid="uid://1h1x6jelv7h8" path="res://object/boss1/left/vampire20240730_le3.png" id="19_6bbkh"]
+[ext_resource type="Texture2D" uid="uid://bvpolymyw57ra" path="res://object/boss1/right/vampire20240730_ri1.png" id="20_f4gt0"]
+[ext_resource type="Texture2D" uid="uid://b3kf3wvwnuc41" path="res://object/boss1/right/vampire20240730_ri2.png" id="21_f56nb"]
+[ext_resource type="Texture2D" uid="uid://yxscvrir667b" path="res://object/boss1/right/vampire20240730_ri3.png" id="22_cvqwp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x1qe4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p8nfm")
+}],
+"loop": true,
+"name": &"vamp_att",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8xei6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yeo67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mdds3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7mmg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lg6gj")
+}],
+"loop": true,
+"name": &"vamp_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_xfb0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jax0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_c0cj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_e516i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_g7g13")
+}],
+"loop": true,
+"name": &"vamp_def",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ajswf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dggh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_t1845")
+}],
+"loop": true,
+"name": &"vamp_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_dr8m1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_smwtm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6bbkh")
+}],
+"loop": true,
+"name": &"vamp_l",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_f4gt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_f56nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_cvqwp")
+}],
+"loop": true,
+"name": &"vamp_r",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blv0m"]
+size = Vector2(32, 55)
+
+[node name="boss1" type="Area2D" groups=["boss", "boss1"]]
+script = ExtResource("1_ndtjv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x1qe4")
+animation = &"vamp_def"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -5.5)
+shape = SubResource("RectangleShape2D_blv0m")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

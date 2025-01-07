@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmxf4ywx3n2fx"]
+
+[ext_resource type="Script" path="res://script/player/bullet/bomb.gd" id="1_axcfl"]
+[ext_resource type="Texture2D" uid="uid://dnse1h8xt78vv" path="res://object/bullet/bomb/ene_bullet20241101.png" id="1_sbobe"]
+[ext_resource type="Texture2D" uid="uid://dua33hjbca33s" path="res://object/bullet/bomb/ene_bullet20241102.png" id="2_ecjbm"]
+[ext_resource type="Texture2D" uid="uid://dhqerke0janmf" path="res://object/bullet/bomb/ene_bullet20241103.png" id="3_ecesb"]
+[ext_resource type="Texture2D" uid="uid://c2q4sl40w2gkh" path="res://object/bullet/bomb/ene_bullet20241104.png" id="4_qludh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otqmx"]
+size = Vector2(21, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u0a5g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sbobe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ecjbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ecesb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qludh")
+}],
+"loop": true,
+"name": &"def",
+"speed": 5.0
+}]
+
+[node name="bomb" type="Area2D" groups=["shot"]]
+script = ExtResource("1_axcfl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 2.5)
+shape = SubResource("RectangleShape2D_otqmx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(3.244, 5.946, 2.703, 1)
+self_modulate = Color(1, 1, 0.988235, 1)
+sprite_frames = SubResource("SpriteFrames_u0a5g")
+animation = &"def"
+autoplay = "def"
+frame_progress = 0.457099
+speed_scale = 1.9
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,86 @@
+[gd_scene load_steps=18 format=3 uid="uid://co4cl4nsdfcs3"]
+
+[ext_resource type="Script" path="res://script/item/buf_item/buf_item1.gd" id="1_nkwc8"]
+[ext_resource type="Texture2D" uid="uid://dkmkekkhpj7q3" path="res://object/buf_item1/t_item/tonakai_item1.png" id="2_hc8j1"]
+[ext_resource type="Texture2D" uid="uid://bl0gcrlf7e6he" path="res://object/buf_item1/t_item/tonakai_item2.png" id="3_fw5n0"]
+[ext_resource type="Texture2D" uid="uid://4bcl5l0dlv00" path="res://object/buf_item1/t_item/tonakai_item3.png" id="4_t258n"]
+[ext_resource type="Texture2D" uid="uid://bt318eaunc3bv" path="res://object/buf_item1/t_item/tonakai_item4.png" id="5_nuqkt"]
+[ext_resource type="Texture2D" uid="uid://b2fxrlrpfr248" path="res://object/buf_item1/t_item/tonakai_item5.png" id="6_b822l"]
+[ext_resource type="Texture2D" uid="uid://dsot8iujjlu5r" path="res://object/buf_item1/t_item/tonakai_item6.png" id="7_s74wc"]
+[ext_resource type="Texture2D" uid="uid://bn3qs0yt3xxqr" path="res://object/buf_item1/t_item/tonakai_item7.png" id="8_ivs0d"]
+[ext_resource type="Texture2D" uid="uid://ddrqcn66ei71g" path="res://object/buf_item1/t_item/tonakai_item9.png" id="9_3sede"]
+[ext_resource type="Texture2D" uid="uid://davfkm6s416d1" path="res://object/buf_item1/t_item/tonakai_item8.png" id="10_7dguf"]
+[ext_resource type="Texture2D" uid="uid://bdbxwwwawrudu" path="res://object/buf_item1/t_item/tonakai_item11.png" id="11_y1021"]
+[ext_resource type="Texture2D" uid="uid://ccs1qf5ic0833" path="res://object/buf_item1/t_item/tonakai_item13.png" id="12_7aa1e"]
+[ext_resource type="Texture2D" uid="uid://br6nynxjrbv0w" path="res://object/buf_item1/t_item/tonakai_item14.png" id="13_be3je"]
+[ext_resource type="Texture2D" uid="uid://c17nf2ynby4oh" path="res://object/buf_item1/t_item/tonakai_item15.png" id="14_ifc2n"]
+[ext_resource type="Texture2D" uid="uid://7157tsi2dswy" path="res://object/buf_item1/t_item/tonakai_item16.png" id="15_miiev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nofiq"]
+size = Vector2(25, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32ngp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hc8j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fw5n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t258n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nuqkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b822l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_s74wc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ivs0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3sede")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7dguf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_y1021")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7aa1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_be3je")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ifc2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_miiev")
+}],
+"loop": true,
+"name": &"buf_item_roll",
+"speed": 5.0
+}]
+
+[node name="buf_item1" type="Area2D" groups=["buf_item1"]]
+script = ExtResource("1_nkwc8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 6.5)
+shape = SubResource("RectangleShape2D_nofiq")
+
+[node name="item_ani" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_32ngp")
+animation = &"buf_item_roll"
+autoplay = "buf_item_roll"
+frame_progress = 0.845695
+speed_scale = 2.165
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
